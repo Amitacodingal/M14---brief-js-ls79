@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datatypes</title>
+</head>
+<body>
+
+<p>Click the button to get a time-based greeting:</p>
+<button onclick="myFunction()">Try it</button>
+<p id="hour"></p>
+<p id="greet"></p>
+
+<!-- ACP -->
+<h2>JavaScript Datatypes, Let keyword and Loops</h2>
+
+<p id="result"></p>
+
+<script>
+//activity 1
+// Different types of Datatypes stored in variables: 
+var a = 48.30;
+var b = 10;
+var c = 10;
+var d = null;
+var e; // undefined variable
+var f = false;
+document.write("a and b are equal : " + (a == b));
+document.write("<br>");
+document.write("b and c are equal : " + (b == c));
+document.write("<br>");
+document.write("The value of d is : " + d);
+document.write("<br>");
+document.write("The value of e is : " + e);
+document.write("<br>");
+document.write("The value of f is : " + f);
+
+//activity2 let var and const 
+//var is used to declare global variables, let and const are block scope ,let can be re-assigned but not re-decalre, const cannot reassigned and re-declared
+
+var glb = 10
+//console.log(blk1); not accessible
+
+function fun1() {
+let  blk1 = 20;
+blk1 = blk1+1
+const blk2 = 30;
+blk2 = blk2+1
+console.log(glb);
+console.log(blk1);
+console.log(blk2);
+
+}
+//calling function 
+fun1();
+
+//acitivity3 
+function myFunction() {
+var greeting;
+var time = new Date().getHours();
+
+if (time < 10) {
+    greeting = "Good morning";
+}
+else if (time < 20) {
+    greeting = "Good day";
+}
+else {
+    greeting = "Good evening";
+}
+document.getElementById("hour").innerHTML = "Current Hour is : " + time;
+document.getElementById("greet").innerHTML = greeting;
+}
+
+//acp lopps datatypes
+
+    var i; // i is undefined 
+    var text = " ";
+    {
+        let i = 0; // assigning a value for i only within the block
+        while (i < 10) {
+            text += "The values inside the block: " + i + "</br>";
+            i++;
+        }
+        document.getElementById("result").innerHTML = text;
+    }
+
+    document.write("The value of i outside the block is: " + i);
+
+
+
+</script>
+
+</body>
+</html>
